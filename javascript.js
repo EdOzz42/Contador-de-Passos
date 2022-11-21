@@ -1,39 +1,22 @@
-let botao0 = document.querySelector('#buttonExec')
-botao0.addEventListener('click', executar)
-let botao1 = document.querySelector('#buttonDel')
-botao1.addEventListener('click', del)
+let button = document.querySelector('#buttonExec')
+button.addEventListener('click', executar)
 
-/*function executar() {
-    var input = document.querySelector('#inpNume')
-    let body = document.querySelector('body')
-    let p = document.createElement('p')
-    let n1 = input1 = String(input1.value)
-    let txt = document.createTextNode(`Bla Bla 
-    Bla ${n1}`)
-    
-    p.appendChild(txt)
-    body.appendChild(p)
-}
-*/
 
-function executar(){
-    let input = document.querySelector('#inpNume')
-    let contadorUser = Number(input.value)
-    let contadorAdd = 0
-    let section = document.createElement('section')
-    section.setAttribute('id', 'sctn')
+function executar() {
+    //window.alert('Hello, world!')
+    let iniNumSelec = document.querySelector('#quantInicial')
+    let fimNumSelec = document.querySelector('#quantFinal')
+    let tamanhoPassoSelec = document.querySelector('#quantPassos')
+    let paragraph = document.querySelector('#resPassos')
 
-    while (contadorAdd < contadorUser) {
-        contadorAdd++
-        let main = document.querySelector('main')
-        let paragraph = document.createElement('p')
-        let content = document.createTextNode(`#${contadorAdd}`)
-        main.appendChild(section)
-        section.appendChild(paragraph)
-        paragraph.appendChild(content)
+    let i = Number(iniNumSelec.value)
+    let f = Number(fimNumSelec.value)
+    let p = Number(tamanhoPassoSelec.value)
+    let numAparicoesC = 0
+
+    for (let c =  i ; c <= f ; c += p) {
+        numAparicoesC++
+        let txt = document.createTextNode(`-> #${numAparicoesC}(${c})`)
+        paragraph.appendChild(txt)
     }
-}
-
-function del() {
-    document.querySelector('#sctn').remove()
 }

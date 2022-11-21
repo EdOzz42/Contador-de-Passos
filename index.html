@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BETA</title>
+    <title>contador de Passos</title>
 </head>
 <body>
+    
+    <header>
+        <h1>Contador de Passos</h1>
+    </header>
+    
     <main>
-        <section>
-            <h1>Contador</h1>
-            <p>Qual é a quantidade de registros de números que você deseja?</p> 
-            <input type="number" name="inpNum" id="inpNume"> <input type="button" value="Executar" id="buttonExec"> <input type="button" value="Del" id="buttonDel">
+        <section class="content0">
+            <p>
+                Início: <input type="number" name="inptNum" id="quantInicial">
+            </p>
+            <p>
+                Final: <input type="number" name="inptNum" id="quantFinal">
+            </p>              
+            <p>
+                Tamanho do passo:<input type="number" name="inptNum" id="quantPassos">
+            <p>
+            
+            <input type="button" value="Executar" id="buttonExec">
+        </section>
+
+        <section class="content1">
+            <h2>Resultado</h2> 
+            <p id="resPassos"></p>
         </section>
     </main>
 
