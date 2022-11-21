@@ -15,8 +15,10 @@ function executar() {
     let numAparicoesC = 0
 
     for (let c =  i ; c <= f ; c += p) {
-        numAparicoesC++
-        let txt = document.createTextNode(`-> #${numAparicoesC}(${c})`)
+        let txt = document.createTextNode(` ->${c}`)
         paragraph.appendChild(txt)
     }
+
+    let txt = document.createTextNode(` -> Fim`)
+    paragraph.appendChild(txt)
 }
