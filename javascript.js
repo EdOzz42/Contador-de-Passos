@@ -1,29 +1,51 @@
-let button = document.querySelector('#buttonExec')
-button.addEventListener('click', executar)
+let buttonExecutar = document.querySelector('#buttonExec')
+buttonExecutar.addEventListener('click', executar)
+let buttonDelete = document.querySelector('#buttonDelete')
+buttonDelete.addEventListener('click', limpar)
 
+function limpar() {
+    let paragraph = document.querySelector('#resPassos')
+    let section = document.querySelector('#content1')
+    section.removeChild(paragraph)
+}
 
-function executar() {
+function executar() {  
     //window.alert('Hello, world!')
+    //Selecionar os inputs.
     let iniNumSelec = document.querySelector('#quantInicial')
     let fimNumSelec = document.querySelector('#quantFinal')
     let tamanhoPassoSelec = document.querySelector('#quantPassos')
+    
+    //Selecionar a section, criar uma parágrafo, atrelar esse novo parágrafo dentro da section.
+    let section = document.querySelector('#content1')
+    let createParagraph = document.createElement('p')
+    createParagraph.setAttribute('id', 'resPassos')
+    section.append(createParagraph)
+
+    //selecionar o novo parágrafo.
     let paragraph = document.querySelector('#resPassos')
- 
+    
+    // Espaços de memória que vão armazenar os valores coletados dos inputs e transformar esses dados no tipo número.
+    let i = Number(iniNumSelec.value)
+    let f = Number(fimNumSelec.value)
+    let p = Number(tamanhoPassoSelec.value)
+
     if (fimNumSelec.value.length == 0 || tamanhoPassoSelec.value.length == 0 || iniNumSelec.value.length == 0) {
         window.alert('[ERRO!] Verifique se você preencheu os dados corretamente!')
-        let txt = document.createTextNode(`[ERRO!] Verefique os dados!`)
-        paragraph.appendChild(txt)
-    } else {
-        let i = Number(iniNumSelec.value)
-        let f = Number(fimNumSelec.value)
-        let p = Number(tamanhoPassoSelec.value)
-    
+        paragraph.innerHTML += '[ERRO!] Verefique os dados novamente!'
+    } 
+    else  if(i < f) {
+        // looping quando i < f 
         for (let c =  i ; c <= f ; c += p) {
-            let txt = document.createTextNode(` ->${c}`)
-            paragraph.appendChild(txt)
+            paragraph.innerHTML += `\u{27A1} ${c}`
         }
-    
-        let txt = document.createTextNode(` -> Fim`)
-        paragraph.appendChild(txt)
+    } 
+    else { 
+        //lopping quando f < i 
+        for (let c = i ; c >= f ; c -= p) {
+        paragraph.innerHTML += `\u{27A1} ${c}`
     }
+    }
+  
+    paragraph.innerHTML += `\u{27A1} \u{2611}` 
 }
