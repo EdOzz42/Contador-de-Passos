@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>contador de Passos</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
     </header>
     
     <main>
-        <section class="content0">
+        <section class="coletaDados">
             <p>
                 Início: <input type="number" name="inptNum" id="quantInicial">
             </p>
@@ -21,7 +22,7 @@
                 Final: <input type="number" name="inptNum" id="quantFinal">
             </p>              
             <p>
-                Tamanho do passo:<input type="number" name="inptNum" id="quantPassos">
+                Tamanho do passo: <input type="number" name="inptNum" id="quantPassos">
             <p>
             
             <div class="botoes">
@@ -30,11 +31,15 @@
             </div>
         </section>
 
-        <section class="content1" id="content1">
+        <section class="resultadoPassos" id="resultadoPassos">
             <h2>Resultado</h2> 
             <p id="resPassos"></p>
         </section>
     </main>
+
+    <footer>
+        <p>Me encontre no <a href="https://github.com/EdOzz42" class="github"><strong>GitHub</strong></a></p>
+    </footer>
 
     <script src="javascript.js"></script>
 </body>

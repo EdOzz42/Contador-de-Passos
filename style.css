@@ -1,0 +1,49 @@
+body {
+    font: normal 16pt Arial;
+    background-color: rgb(90, 90, 90);
+    max-width: 750px;
+    min-width: 250px;
+    margin: auto;
+    }
+    
+    header {
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    
+    section {
+        background: rgb(227, 227, 227);
+        color: black;
+        border-radius: 10px;
+        padding: 18px;
+        border: 5px solid rgb(79, 207, 79);
+    }
+
+    input {
+        border-radius: 5px;
+        border: 2px solid rgb(79, 207, 79);
+        font-size: large;
+    }
+
+    .coletaDados {
+        margin-bottom: 8px;
+    }
+
+    .resultadoPassos {
+        text-align: center;
+    }
+
+
+    footer {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+    }
+    
+    .github {
+        text-decoration: none;
+        color: rgb(79, 207, 79);
+        border: 2px solid rgb(79, 207, 79);
+        border-radius: 5px;
+        background-color: rgb(79, 207, 79, 0.150);
+    }

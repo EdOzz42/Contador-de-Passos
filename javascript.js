@@ -5,7 +5,7 @@ buttonDelete.addEventListener('click', limpar)
 
 function limpar() {
     let paragraph = document.querySelector('#resPassos')
-    let section = document.querySelector('#content1')
+    let section = document.querySelector('#resultadoPassos')
     section.removeChild(paragraph)
 }
 
@@ -17,7 +17,7 @@ function executar() {
     let tamanhoPassoSelec = document.querySelector('#quantPassos')
     
     //Selecionar a section, criar uma parágrafo, atrelar esse novo parágrafo dentro da section.
-    let section = document.querySelector('#content1')
+    let section = document.querySelector('#resultadoPassos')
     let createParagraph = document.createElement('p')
     createParagraph.setAttribute('id', 'resPassos')
     section.append(createParagraph)
