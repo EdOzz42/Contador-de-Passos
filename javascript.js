@@ -25,27 +25,33 @@ function executar() {
     //selecionar o novo parágrafo.
     let paragraph = document.querySelector('#resPassos')
     
-    // Espaços de memória que vão armazenar os valores coletados dos inputs e transformar esses dados no tipo número.
-    let i = Number(iniNumSelec.value)
-    let f = Number(fimNumSelec.value)
-    let p = Number(tamanhoPassoSelec.value)
 
-    if (fimNumSelec.value.length == 0 || tamanhoPassoSelec.value.length == 0 || iniNumSelec.value.length == 0) {
+    if (iniNumSelec.value.length == 0 || fimNumSelec.value.length == 0 || tamanhoPassoSelec.value.length == 0) {
         window.alert('[ERRO!] Verifique se você preencheu os dados corretamente!')
-        paragraph.innerHTML += '[ERRO!] Verefique os dados novamente!'
+        paragraph.innerHTML += '[ERRO!] Verefique os dados novamente! <br>'
     } 
-    else  if(i < f) {
-        // looping quando i < f 
-        for (let c =  i ; c <= f ; c += p) {
-            paragraph.innerHTML += `\u{27A1} ${c}`
-        }
-    } 
-    else { 
-        //lopping quando f < i 
-        for (let c = i ; c >= f ; c -= p) {
-        paragraph.innerHTML += `\u{27A1} ${c}`
+    
+    else if (tamanhoPassoSelec.value <= 0) {
+        window.alert('[ERRO!] Verifique se você preencheu o número de passos corretamente!')
+        paragraph.innerHTML += '[ERRO!] O número de passos tem que ser maior que 0! <br>' 
     }
-    }
-  
-    paragraph.innerHTML += `\u{27A1} \u{2611}` 
+
+    else {
+        // Espaços de memória que vão armazenar os valores coletados dos inputs e transformar esses dados no tipo número.
+        let i = Number(iniNumSelec.value)
+        let f = Number(fimNumSelec.value)
+        let p = Number(tamanhoPassoSelec.value) 
+        
+        if (i < f)
+            // looping quando i < f 
+            for (let c =  i ; c <= f ; c += p) {
+                paragraph.innerHTML += `${c} \u{27A1}`
+            } else { 
+            //lopping quando f < i 
+            for (let c = i ; c >= f ; c -= p) {
+            paragraph.innerHTML += `${c} \u{27A1}`
+        }}
+        paragraph.innerHTML += `\u{2611} <br>` 
+    }    
+
 }
